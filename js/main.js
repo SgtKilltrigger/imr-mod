@@ -30,7 +30,6 @@ const FORMS = {
     },
     getPreQUGlobalSpeed() {
         let x = E(1), inf = tmp.preInfGlobalSpeed
-
         if (tmp.c16active && (hasElement(236))) return inf.mul(10000)
         if (tmp.c16active && (!hasElement(236))) return inf.div(100)
         if (CHALS.inChal(17)|| CHALS.inChal(18)) return inf.div(1e9)
@@ -48,8 +47,10 @@ const FORMS = {
     },
     massGain() {
         let x = E(1)
-        x = x.mul(RANKS).add(1)
         x = x.add(tmp.upgs.mass[1]?tmp.upgs.mass[1].eff.eff:1)
+        x = x.mul(player.mass.gte(1) ? player.mass.log(10).plus(1) : E(1))
+        x = x.mul(player.ranks.rank.plus(1))
+        x = x.mul(player.ranks.tier.gte(1) ? player.ranks.tier.mul(player.ranks.tier).add(1) : E(1))
         if (player.ranks.rank.gte(6)) x = x.mul(RANKS.effect.rank[6]())
         if (player.ranks.rank.gte(13)) x = x.mul(3)
         if (player.mainUpg.bh.includes(10)) x = x.mul(tmp.upgs.main?tmp.upgs.main[2][10].effect:E(1))
@@ -436,6 +437,7 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
             if (CHALS.inChal(7) || CHALS.inChal(18)|| CHALS.inChal(19)|| CHALS.inChal(20) || CHALS.inChal(10)) gain = player.mass.div(1e180)
             if (gain.lt(1)) return E(0)
             gain = gain.root(4)
+            gain = gain.mul(player.bh.gte(1) ? player.bh.log(10).plus(1) : E(1))
 
             if (hasTree("bh1") && !hasElement(166)) gain = gain.mul(tmp.supernova.tree_eff.bh1)
             if (!hasElement(204)) gain = gain.mul(tmp.bosons.upgs.photon[0].effect)

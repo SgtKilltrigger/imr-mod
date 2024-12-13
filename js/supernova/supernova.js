@@ -61,6 +61,7 @@ const SUPERNOVA = {
         if (hasTree("sn3")) x = x.mul(tmp.supernova.tree_eff.sn3)
         if (hasTree("bs3")) x = x.mul(tmp.supernova.tree_eff.bs3)
         if (hasTree("sn5")) x = x.mul(tmp.supernova.tree_eff.sn5)
+        x = x.mul(player.supernova.stars.gte(1) ? player.supernova.stars.log(10).plus(1) : E(1))
 
         let qs = Decimal.pow(1.2,player.qu.times.softcap(1e17,0.1,0))
         if (!hasElement(140) || tmp.c16active) qs = qs.min(1e10)

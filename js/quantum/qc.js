@@ -17,6 +17,8 @@ const QCs = {
     GetMaxModifications() {
         let x = E(10)
         if (hasElement(36,1)) x = x.add(muElemEff(36))
+        let massEffect = E(50).div(E(1).add(E(10).pow(player.mass.log(10).neg())))
+        x = x.add(massEffect)
         return x
     },
     names: ["Black Dwarf","Time Anomaly","Hypertiered","Melted Interactions","Intense Catalyst","Ex-Challenge","Spatial Dilation","Extreme Scaling"],
