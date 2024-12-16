@@ -40,6 +40,7 @@ const MASS_DILATION = {
         if (CHALS.inChal(11)|| CHALS.inChal(18)) return E(0)
         let pow = E(2).add(tmp.bd.upgs[1].eff)
         let x = player.md.particles.pow(pow)
+        x = x.mul(x.log(100).plus(1))
         x = x.mul(tmp.md.upgs[0].eff)
         if (hasElement(22)) x = x.mul(tmp.elements.effect[22])
         if (hasElement(35)) x = x.mul(tmp.elements.effect[35])

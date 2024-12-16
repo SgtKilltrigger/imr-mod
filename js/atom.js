@@ -4,6 +4,7 @@ const ATOM = {
         let x = player.bh.mass.div(player.mainUpg.br.includes(1)?1.5e156**0.5:1.5e156)
         if (x.lt(1)) return E(0)
         x = x.root(5)
+        x = x.mul(player.ranks.tier.log(20).plus(1))
         if (player.mainUpg.rp.includes(15)) x = x.mul(tmp.upgs.main?tmp.upgs.main[1][15].effect:E(1))
         x = hasElement(204) ? x.pow(tmp.bosons.upgs.gluon[0].effect) : x.mul(tmp.bosons.upgs.gluon[0].effect)
         if (hasElement(17)) x = x.pow(1.1)
@@ -41,6 +42,8 @@ const ATOM = {
         if (tmp.inf_unl) x = x.pow(theoremEff('atom',0))
 
         if (tmp.c16active || player.dark.run.active) x = expMult(x,mgEff(2))
+
+        x = x.mul(player.ranks.tetr.log(10).plus(1))
 
         let o = x
         let os = tmp.c16active ? E('ee6') : E('ee90').pow(tmp.dark.abEff.ApQ_Overflow||1).pow(treeEff('ct13')?tmp.chal.eff[15]:1)
