@@ -43,8 +43,6 @@ const ATOM = {
 
         if (tmp.c16active || player.dark.run.active) x = expMult(x,mgEff(2))
 
-        x = x.mul(player.ranks.tetr.log(10).plus(1))
-
         let o = x
         let os = tmp.c16active ? E('ee6') : E('ee90').pow(tmp.dark.abEff.ApQ_Overflow||1).pow(treeEff('ct13')?tmp.chal.eff[15]:1)
 
