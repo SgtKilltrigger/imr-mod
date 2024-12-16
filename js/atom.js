@@ -24,7 +24,7 @@ const ATOM = {
     quarkGain() {
         if (tmp.atom.gain.lt(1)) return E(0)
         x = tmp.atom.gain.max(1).log10().pow(1.1).add(1)
-        x = x.mul(player.ranks.tier.gte(10) ? player.ranks.tier.sub(8).mul(player.ranks.tier).add(1) : E(1))
+        x = x.mul(player.ranks.tier.sub(8).mul(player.ranks.tier).add(1))
         if (hasElement(1)) x = E(1.25).pow(tmp.atom.gain.max(1).log10())
         if (player.mainUpg.bh.includes(13)) x = x.mul(10)
         if (player.mainUpg.atom.includes(8)) x = x.mul(tmp.upgs.main?tmp.upgs.main[3][8].effect:E(1))
