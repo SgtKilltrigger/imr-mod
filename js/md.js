@@ -42,11 +42,14 @@ const MASS_DILATION = {
         let pow = E(2).add(tmp.bd.upgs[1].eff)
         let x = player.md.particles.pow(pow)
         if (x.gte(1)) x = x.mul(x.log(10).add(1))
+        if (player.supernova.times.gte(1)) x = x.mul(player.supernova.times.pow(10).add(1))
+        
         x = x.mul(tmp.md.upgs[0].eff)
         if (hasElement(22)) x = x.mul(tmp.elements.effect[22])
         if (hasElement(35)) x = x.mul(tmp.elements.effect[35])
         if (hasElement(40)) x = x.mul(tmp.elements.effect[40][0])
         if (hasElement(32)) x = x.pow(1.05)
+        if (player.supernova.times.gte(20)) x = x.min(x.pow((player.supernova.times.sub(19)).mul(0.01).add(1)), 2)
         if (QCs.active()) x = x.pow(tmp.qu.qc_eff[4])
 
         x = x.softcap(tmp.md.massSoftcap1,0.5,0)

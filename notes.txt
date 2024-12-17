@@ -1,3 +1,4 @@
 elements unlock at 334 ranks, 34 tier, 3 tetr
 supernova       at ~1400 ranks, 75 tier, 7 tetr
 bosons:         at ~1600 ranks, 81 tier, 8 tetr (post supernova 10 and star booster boughts)
+fermions/C10    at 1880 ranks, ???
