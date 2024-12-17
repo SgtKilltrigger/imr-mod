@@ -76,6 +76,7 @@ const BOSONS = {
         },
         hb() {
             let x = E(0.01).mul(tmp.fermions.effs[1][1])
+            if (player.supernova.bosons.hb.gte(1e3)) x = x.mul(player.supernova.times.log(1.25))
             if (hasTree('ct2')) x = x.mul(treeEff('ct2'))
             if (hasTree("bs1")) x = x.mul(tmp.supernova?tmp.supernova.tree_eff.bs1:1)
             if (QCs.active()) x = x.pow(tmp.qu.qc_eff[3])
