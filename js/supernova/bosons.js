@@ -66,6 +66,7 @@ const BOSONS = {
         },
         graviton() {
             let x = E(0.01).mul(tmp.bosons.effect.graviton?tmp.bosons.effect.graviton[0]:1).mul(tmp.fermions.effs[1][1])
+            if (player.supernova.bosons.graviton.gte(5e4)) x = x.mul(player.atom.elements.length+1.).mul(0.2)
             if (hasTree('ct2')) x = x.mul(treeEff('ct2'))
             if (QCs.active()) x = x.pow(tmp.qu.qc_eff[3])
             if (hasPrestige(1,3)) x = x.pow(prestigeEff(1,3))
