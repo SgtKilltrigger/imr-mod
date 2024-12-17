@@ -55,15 +55,13 @@ const SUPERNOVA = {
         tmp.pass = 2
     },
     starGain() {
-        let x = E(hasTree("c")?0.1:0)
-        x = x.mul(x.log(10).plus(1))
+        let x = E(hasTree("c")?0.2:0)
+        if (player.supernova.stars.gte(1)) x = x.mul(player.supernova.stars.log(10).plus(1))
         if (hasTree("sn1")) x = x.mul(tmp.supernova.tree_eff.sn1)
         if (hasTree("sn2")) x = x.mul(tmp.supernova.tree_eff.sn2)
         if (hasTree("sn3")) x = x.mul(tmp.supernova.tree_eff.sn3)
         if (hasTree("bs3")) x = x.mul(tmp.supernova.tree_eff.bs3)
         if (hasTree("sn5")) x = x.mul(tmp.supernova.tree_eff.sn5)
-        x = x.mul(player.supernova.stars.gte(1) ? player.supernova.stars.log(10).plus(1) : E(1))
-        x = x.mul(player.supernova.stars.gte(1) ? x.mul(x.log(10).plus(1)) : E(1))
 
         let qs = Decimal.pow(1.2,player.qu.times.softcap(1e17,0.1,0))
         if (!hasElement(140) || tmp.c16active) qs = qs.min(1e10)

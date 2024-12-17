@@ -2,8 +2,11 @@ const STARS = {
     unlocked() { return hasElement(36) },
     gain() {
         let x = player.stars.generators[0]
+        if (x.gte(1)) x = x.mul(x.log(50).add(1))
         if (player.md.upgs[8].gte(1)) x = x.mul(tmp.md.upgs[8].eff)
+        if (hasElement(41)) x = x.mul(x.log(50))
         if (hasPrestige(1,1)) x = x.pow(2)
+        
 
         x = x.softcap(tmp.stars.softGain,tmp.stars.softPower,0)
 
@@ -93,6 +96,7 @@ const STARS = {
             if (player.md.upgs[8].gte(1)) x = x.mul(tmp.md.upgs[8].eff)
             if (hasElement(54)) x = hasElement(292)?x.pow(tmp.elements.effect[54]):x.mul(tmp.elements.effect[54])
             x = x.mul(tmp.stars.generator_boost_eff)
+            //x = x.mul(x.log(10).add(1))
             x = hasElement(213) ? x.pow(tmp.bosons.upgs.photon[3].effect) : x.mul(tmp.bosons.upgs.photon[3].effect)
             if (hasPrestige(1,1)) x = x.pow(2)
             if (player.galaxy.times.gte(1)) x = x.pow(tmp.galaxy.eff)
