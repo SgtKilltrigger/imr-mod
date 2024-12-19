@@ -43,7 +43,7 @@ const RADIATION = {
         return x
     },
     ds_eff(i) {
-        let x = player.supernova.radiation.ds[i].add(1).root(3).pow(getEnRewardEff(7))
+        let x = player.supernova.radiation.ds[i].add(1).root(3).pow(getEnRewardEff(7) < 1 ? 1 : getEnRewardEff(7))
         if (hasTree('prim2')) x = x.pow(tmp.prim.eff[6][1])
         return x
     },
