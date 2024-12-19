@@ -105,7 +105,7 @@ const QUANTUM = {
         },
         eff() {
             let pow = E(2)
-            pow = pow.add(player.qu.cosmic_str.mul(0.005))
+            pow = pow.add(player.qu.cosmic_str.mul(0.01))
             if (hasTree('qu6')) pow = pow.mul(treeEff('qu6'))
             pow = pow.mul(tmp.dark.abEff.csp||1)
             pow = pow.pow(exoticAEff(1,3))

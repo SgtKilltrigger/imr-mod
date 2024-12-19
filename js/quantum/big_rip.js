@@ -12,6 +12,7 @@ const BIG_RIP = {
         if (hasPrestige(0,2)) x = x.mul(4)
         if (player.md.break.upgs[6].gte(1)) x = x.mul(tmp.bd.upgs[6].eff?tmp.bd.upgs[6].eff[1]:1)
         if (hasUpgrade('br',13)) x = x.mul(upgEffect(4,13))
+        if (player.qu.rip.amt.gte(10)) x = x.mul(x.min(4, player.qu.rip.amt.log(10).add(1)))
         let o = x
         let os = 'e66000'
         let op = E(0.15)

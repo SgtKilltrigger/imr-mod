@@ -19,7 +19,8 @@ const ENTROPY = {
         let x = tmp.en.eff.eth.mul(getEnRewardEff(6))
         if (hasElement(93)) x = x.mul(tmp.elements.effect[93]||1)
         if (player.md.break.upgs[6].gte(1)) x = x.mul(tmp.bd.upgs[6].eff?tmp.bd.upgs[6].eff[0]:1)
-        x = x.mul(tmp.en.eff.eth.log(10).plus(1))
+        let y = (player.qu.cosmic_str.mul(0.01)).add(1)
+        x = x.mul((tmp.en.eff.eth.log(10).plus(1)).pow(y))
         x = x.mul(tmp.dark.shadowEff.en||1)
 
         x = x.pow(exoticAEff(0,2))
