@@ -24,6 +24,7 @@ const ATOM = {
     quarkGain() {
         if (tmp.atom.gain.lt(1)) return E(0)
         x = tmp.atom.gain.max(1).log10().pow(1.1).add(1)
+        if (player.chal.comps[7].gte(1)) x = x.mul(player.chal.comps[7].pow(player.chal.comps[7].mul(0.01).add(1)))
         if (player.ranks.tier.gte(11)) x = x.mul(player.ranks.tier.sub(10))
         if (hasElement(1)) x = E(1.25).pow(tmp.atom.gain.max(1).log10())
         if (player.mainUpg.bh.includes(13)) x = x.mul(10)
@@ -42,6 +43,8 @@ const ATOM = {
         if (tmp.inf_unl) x = x.pow(theoremEff('atom',0))
 
         if (tmp.c16active || player.dark.run.active) x = expMult(x,mgEff(2))
+
+        if (hasElement(60)) x = x.pow(1.005)
 
         let o = x
         let os = tmp.c16active ? E('ee6') : E('ee90').pow(tmp.dark.abEff.ApQ_Overflow||1).pow(treeEff('ct13')?tmp.chal.eff[15]:1)
@@ -191,6 +194,7 @@ const ATOM = {
             x = x.softcap('e3.8e4',0.9,2).softcap('e1.6e5',0.9,2)
             if (hasElement(61)) x = x.mul(p.add(1).root(2))
             if (!hasElement(169)) x = x.softcap('ee11',0.9,2).softcap('ee13',0.9,2)
+            if (hasElement(56)) x = x.pow(1.01)
             return x
         },
         gain(i) {

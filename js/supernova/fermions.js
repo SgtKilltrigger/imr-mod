@@ -14,6 +14,8 @@ const FERMIONS = {
 
         if (tmp.c16active || player.dark.run.active) x = expMult(x,mgEff(4)[0])
 
+        if (hasElement(65)) x = x.pow(1.01)
+
         return x
     },
     backNormal() {
@@ -283,6 +285,7 @@ const FERMIONS = {
                 },
                 eff(i, t) {
                     let x = i.add(1).log10().mul(t).div(100).add(1).softcap(1.5,hasTree("fn5")?0.75:0.25,0)
+                    if (player.supernova.times.gte(30)) x = x.max(x.mul(player.supernova.times.sub(23).mul(0.05)), 1)
                     if (hasTree("fn10")) x = x.pow(4.5)
                     return x//.softcap(1e18,0.1,0)
                 },

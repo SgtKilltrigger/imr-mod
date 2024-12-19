@@ -22,6 +22,8 @@ const RADIATION = {
     ds_gain(i) {
         if (i>0&&player.supernova.radiation.hz.lt(RADIATION.unls[i])) return E(0)
         let x = E(1).mul(tmp.prim.eff[6][0])
+        if (player.supernova.radiation.hz.gte(5)) x = x.mul((player.supernova.radiation.hz.log(10)).add(1))
+        if (player.supernova.times.gte(40)) x = x.mul((player.supernova.times.sub(40).mul(0.1)).add(1))
         if (hasTree('rad2')) x = x.mul(10)
         if (player.ranks.pent.gte(2)) x = x.mul(RANKS.effect.pent[2]())
         if (i<RAD_LEN-1) {

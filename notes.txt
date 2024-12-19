@@ -2,3 +2,35 @@ elements unlock at 334 ranks, 34 tier, 3 tetr
 supernova       at ~1400 ranks, 75 tier, 7 tetr
 bosons:         at ~1600 ranks, 81 tier, 8 tetr (post supernova 10 and star booster boughts)
 fermions/C10    at 1880 ranks, ???
+
+
+
+
+
+
+
+
+
+effect on challenge caps
+element 13         c7 completion gives 2 cap for c5 and c6 each     mass gain pow(1.01)
+element 20         c7 cap +50 []    rp gain.pow(1.01)
+element 41         c7 cap +50 []    bh gain.pow(1.01)
+element 60         c7 cap +100  []  quark gain.pow(1.005)
+element 33         c8 cap +50   []  tickspeed mul(1.05)
+element 56         c8 cap +200  []  particle gain.pow(1.01)
+element 65         c7,c8 cap +200 [] fermion gain.pow(1.01)
+element 70         c7,c8 cap +200
+element 73         c5,c6,c8 cap +???
+neutron chal 1     c7,c8 cap +100
+neutron chal 4b    c9 cap +100
+neutron chal 8     c9-c12 cap +200
+element 104        c9-c12 cap +200
+element 125        c9-c12 cap +???
+
+challenge 7 if not !hasPrestige(2,25):
+
+
+let x = player.chal.comps[7].mul(2) 
+^^^^^^
+challenge 7 completions [] now increases Quark gain
+

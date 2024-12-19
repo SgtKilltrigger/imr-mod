@@ -42,7 +42,7 @@ const MASS_DILATION = {
         let pow = E(2).add(tmp.bd.upgs[1].eff)
         let x = player.md.particles.pow(pow)
         if (x.gte(1)) x = x.mul(x.log(10).add(1))
-        if (player.supernova.times.gte(1)) x = x.mul(player.supernova.times.pow(10).add(1))
+        if (player.supernova.times.gte(1)) x = x.mul(player.supernova.times.pow(10))
         
         x = x.mul(tmp.md.upgs[0].eff)
         if (hasElement(22)) x = x.mul(tmp.elements.effect[22])
