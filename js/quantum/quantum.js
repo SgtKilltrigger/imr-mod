@@ -14,6 +14,7 @@ const QUANTUM = {
     },
     gainTimes() {
         let x = E(1)
+        if (player.qu.times.gte(10)) x = x.mul(5)
         if (hasTree("qu7")) x = x.mul(treeEff("qu7"))
         if (hasTree("qu9")) x = x.mul(treeEff("qu9"))
         if (hasElement(139)) x = x.mul(elemEffect(139,1))

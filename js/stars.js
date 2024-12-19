@@ -7,6 +7,7 @@ const STARS = {
         if (hasElement(41) && x.gte(1)) x = x.mul(x.log(50).add(1))
         if (player.supernova.times.gte(1)) x = x.mul(player.supernova.times)
         if (hasPrestige(1,1)) x = x.pow(2)
+        if (hasElement(73)) x = x.pow(1.015)
         
 
         x = x.softcap(tmp.stars.softGain,tmp.stars.softPower,0)

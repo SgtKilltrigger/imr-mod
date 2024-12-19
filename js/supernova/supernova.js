@@ -68,6 +68,7 @@ const SUPERNOVA = {
 
         if (tmp.qu.mil_reached[6]) x = x.mul(qs.softcap('ee9',0.01,0).softcap('ee10',0.1,0))
         x = x.mul(tmp.radiation.bs.eff[11])
+        if (hasElement(70)) x = x.pow(1.01)
         return x
     },
     req(x=player.supernova.times) {
