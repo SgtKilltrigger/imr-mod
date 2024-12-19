@@ -83,6 +83,7 @@ const QUANTUM = {
         if (hasElement(138)) x = x.mul(elemEffect(138,1))
         x = x.mul(tmp.qu.cosmic_str_eff.eff)
         x = x.mul(tmp.dark.shadowEff.bp||1)
+        if (hasElement(73)) x = x.pow(1.01)
         return x
     },
     bpEff() {
@@ -104,6 +105,7 @@ const QUANTUM = {
         },
         eff() {
             let pow = E(2)
+            pow = pow.add(player.qu.cosmic_str.mul(0.005))
             if (hasTree('qu6')) pow = pow.mul(treeEff('qu6'))
             pow = pow.mul(tmp.dark.abEff.csp||1)
             pow = pow.pow(exoticAEff(1,3))
@@ -123,7 +125,7 @@ const QUANTUM = {
         [E(5), `You start with qol8-9, unl1, and radiation unlocked.`],
         [E(6), `Double Quantum Foam gain.`],
         [E(8), `Pre-Quantum global speed affects Blueprint Particles and Chroma at a reduced rate.`],
-        [E(10), `Supernova stars are boosted by Quantizes (capped at 1e10). Unlock Auto-Quantum.`],
+        [E(10), `Supernova stars are boosted by Quantizes (capped at 1e10). Unlock Auto-Quantum. Gain 5x Quantizes`],
     ],
     auto: {
         mode: ["Amount","Time"],

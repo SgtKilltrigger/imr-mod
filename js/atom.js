@@ -94,6 +94,8 @@ const ATOM = {
 
             if (tmp.c16active || player.dark.run.active) x = expMult(x,mgEff(2))
 
+            if (hasTree("chal1")) x = x.pow(1.01)
+
             let o = x
             let os = tmp.c16active ? E('e500') : E('ee82').pow(tmp.dark.abEff.ApQ_Overflow||1).pow(treeEff('ct13')?tmp.chal.eff[15]:1)
 

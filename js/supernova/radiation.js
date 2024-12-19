@@ -38,6 +38,8 @@ const RADIATION = {
 
         if (hasTree('ct8')) x = x.mul(treeEff('ct8'))
 
+        if (hasTree("Chal4b")) x = x.pow(1.01)
+
         return x
     },
     ds_eff(i) {
