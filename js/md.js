@@ -16,6 +16,7 @@ const MASS_DILATION = {
     RPexpgain() {
         let x = E(2).add(tmp.md.upgs[5].eff).mul((tmp.chal && !CHALS.inChal(10)&& !CHALS.inChal(18))?tmp.chal.eff[10]:1)
         if (!player.md.active && hasTree("d1")) x = x.mul(1.25)
+        if (player.supernova.times.gte(2)) x = x.mul(player.supernova.times.log(10))
         if (FERMIONS.onActive("01")) x = x.div(10)
         if (QCs.active()) x = x.mul(tmp.qu.qc_eff[4])
         if (hasElement(24) && hasPrestige(0,40)) x = x.mul(tmp.elements.effect[24])
@@ -28,6 +29,8 @@ const MASS_DILATION = {
         if (hasElement(31)) x = x.mul(tmp.elements.effect[31])
         if (hasElement(34)) x = x.mul(tmp.elements.effect[34])
         if (hasElement(45)) x = x.mul(tmp.elements.effect[45])
+        let extramult = player.supernova.times.pow(player.supernova.times.mul(0.01).add(1))
+        x = x.mul(extramult)
         x = x.mul(tmp.fermions.effs[0][1]||1)
         return x
     },
