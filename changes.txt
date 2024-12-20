@@ -1,0 +1,124 @@
+mass gain:
+
+log(10) multiplier of mass
+ranksx0.333
+tier^2
+Element 13 --> 1.01 power
+1 supernova --> 1.01 power
+1 quantize --> 1.02 power
+
+rage power:
+
+Element 20 --> 1.01 power
+
+tickspeed:
+
+Element 33 --> 1.05 multiplier to tickspeed power
+
+dark matter:
+
+x tetr
+
+black hole mass:
+
+x tetr^100
+Element 41 --> 1.01 power
+
+Black hole Condenser:
+
+each Condenser + 0.003 power up to 1
+
+atoms:
+
+at tier 10 --> log(20) of tier as multiplier
+
+quarks:
+
+challenge 7 completions give (C7^((C7*0.01)+1)) multiplier
+at tier 11 each subsequent tier --> xTier
+Element 60 --> 1.005 power
+
+Cosmic Rays:
+
+each Cosmic Ray + 0.003 up to 0.333
+
+particles:
+
++1 particle
+log(8) of particle to multiplier
+Element 56 --> power 1.01
+
+Mass Dilation:
+Dilated Mass:
+
+log(10) of Dilated Mass to Multiplier
+x supernova^10
+at supernova 20 --> each supernova above 19 gives + 0.01 to exponent up to 1
+
+Relativistic Particle:
+
+each supernova --> +0.01 to exponent
+
+stars:
+
+log(50) of stars to multiplier
+at element 41 --> log(50) of stars to multiplier
+x supernova
+Element 73 --> power 1.015
+
+Neutron stars:
+
+base is 0.2 instead of 0.1
+log(10) of Neutron stars to multiplier
+Element 70 --> 1.01 power
+
+bosons:
+
+Photon and Gluon log(50/supernova) of each other to the power of 2 as Multiplier
+Photon and Gluon log(20) of Neutron Stars as Multiplier
+Graviton amount of Elements x 0.2 as Multiplier
+Higgs Boson log(1.25) of Supernova as Multiplier
+
+fermions:
+
+at supernova 20 --> supernova-15 as multiplier
+Element 65 --> power 1.01
+
+radiation:
+
+log(10) of hz as Multiplier
+at Supernova 40 --> supernova*0.1 as Multiplier
+Chal4b --> power 1.01
+
+quantum:
+
+Element 73 --> power 1.01 to Blueprint Particle
+Quantizes x5 at 10 Quantizes
+Cosmic String +0.01 for each Cosmic String
+
+chroma:
+
+log(50) of Chroma as Multiplier
+Element 70 --> power 1.01
+
+entropy:
+
+entropy gain x log(10) of Enthalpy to the power of Cosmic String amount
+
+big rip:
+
+log(10) of Death Shards as Multiplier up to x4
+
+quantum challenges:
+
+Supernova x 0.02 as cap bonus up to 50 (2500 Supernova)
+
+dark shadows:
+
+log(10) of Dark shadow to the power of 0.5 as Multiplier
+
+dark rays:
+
+Below 1e12 Dark Rays gain (Dark Rays^0.35/3e3) as passive income
+at 1e130 Dark Rays gain increased Dark Ray passive income (power to log(100) of Dark Rays to the power of 0.01)
+
