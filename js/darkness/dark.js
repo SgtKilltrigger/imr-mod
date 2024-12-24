@@ -105,7 +105,7 @@ const DARK = {
     shadowGain() {
         let x = E(1)
         x = x.mul(tmp.dark.rayEff.shadow)
-        if (x.gte(1)) x = x.mul((player.dark.shadow.log(10).pow(0.5)).plus(1))
+        if (x.gte(10)) x = x.mul((player.dark.shadow.log(10).pow(0.5)).plus(1))
         x = x.mul(tmp.bd.upgs[11].eff||1)
         if (hasElement(119)) x = x.mul(elemEffect(119))
         if (hasElement(135)) x = x.mul(elemEffect(135))

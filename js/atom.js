@@ -25,8 +25,8 @@ const ATOM = {
         if (tmp.atom.gain.lt(1)) return E(0)
         x = tmp.atom.gain.max(1).log10().pow(1.1).add(1)
         let y = player.chal.comps[7]
-        //if (!hasElement(5)) x = x.mul(y.pow(y.mul(0.01).add(1)))
-        //if (hasElement(5)) x.mul(y.mul(2).pow(y.mul(0.01).add(1)))
+        if (!hasElement(5)) x = x.mul(y.pow(y.mul(0.01).add(1)))
+        if (hasElement(5)) x.mul(y.mul(2).pow(y.mul(0.01).add(1)))
         if (player.chal.comps[7].gte(1)) x = x.mul(player.chal.comps[7].pow(player.chal.comps[7].mul(0.01).add(1)))
         if (player.ranks.tier.gte(11)) x = x.mul(player.ranks.tier.sub(10))
         if (hasElement(1)) x = E(1.25).pow(tmp.atom.gain.max(1).log10())
