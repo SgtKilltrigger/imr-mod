@@ -18,7 +18,7 @@ const QCs = {
         let x = E(10)
         if (hasElement(36,1)) x = x.add(muElemEff(36))
         let maxincrease = player.supernova.times.mul(0.02)
-        if (maxincrease.gte(0) && maxincrease.lte(50)) x = x.add(maxincrease.floor)
+        if (maxincrease.lte(50)) x = x.add(maxincrease.floor())
             else x = x.add(50)
         return x
     },
