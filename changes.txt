@@ -120,6 +120,7 @@ log(10) of Dark shadow to the power of 0.5 as Multiplier
 
 dark rays:
 
-Below 1e12 Dark Rays gain (Dark Rays^0.35/3e3) as passive income
+Below 1e12 Dark Rays gain (Dark Rays^0.25/1e3) as passive income
 passive gain to a power of (log(100) to the power of 0.01), minumum 1
+Over 1e12 Dark Rays gain is x10
 
