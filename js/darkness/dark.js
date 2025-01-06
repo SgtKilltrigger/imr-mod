@@ -35,7 +35,7 @@ const DARK = {
         if (a.gte(1e12)) x.passive = a.div(1e12).max(1).log10().add(1).pow(2).div(1e3)
         if (a.gte(1e22)) x.glyph = a.div(1e22).max(1).log10().add(1).root(2).sub(1).div(10).add(1).toNumber()
         if (a.gte(1e130)) x.dChal = a.div(1e130).max(1).log10().mul(20).softcap(100,0.5,0,hasBeyondRank(3,12)).mul(hasElement(21,1)?muElemEff(21):1).mul(hasElement(241)?elemEffect(241):1).floor()
-        //if (a.gte(1e130)) x.passive = x.passive.pow(a.log(100).pow(0.01))
+        if (a.gte(1)) x.passive = x.passive.pow(a.log(10).add(1).pow(0.01).max(1))
 
         return x
     },

@@ -94,7 +94,7 @@ quantum:
 
 Element 73 --> power 1.01 to Blueprint Particle
 Quantizes x5 at 10 Quantizes
-Cosmic String +0.01 for each Cosmic String
+Cosmic String power +0.01 for each Cosmic String
 
 chroma:
 
@@ -107,7 +107,8 @@ entropy gain x log(10) of Enthalpy to the power of Cosmic String amount
 
 big rip:
 
-log(10) of Death Shards as Multiplier up to x4
+death shards < 750000, log(4) of death shards as multiplier
+death shard passive gain multiplier based on log(10) of death shards (starting at 750000 death shards)
 
 quantum challenges:
 
@@ -120,5 +121,5 @@ log(10) of Dark shadow to the power of 0.5 as Multiplier
 dark rays:
 
 Below 1e12 Dark Rays gain (Dark Rays^0.35/3e3) as passive income
-at 1e130 Dark Rays gain increased Dark Ray passive income (power to log(100) of Dark Rays to the power of 0.01)
+passive gain to a power of (log(100) to the power of 0.01), minumum 1
 
