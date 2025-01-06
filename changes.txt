@@ -1,3 +1,8 @@
+these are basically all the changes made compared to the Incremental Mass Rewritten mod by seder3214
+it is inteded to make the game faster (at times probably too fast), as to make it more active
+I personally played IMR on x10 speed using an addon, as I didn't like waiting for a long time to progress more
+
+
 mass gain:
 
 log(10) multiplier of mass
