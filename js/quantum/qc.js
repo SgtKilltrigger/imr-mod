@@ -18,8 +18,7 @@ const QCs = {
         let x = E(10)
         if (hasElement(36,1)) x = x.add(muElemEff(36))
         let maxincrease = player.supernova.times.mul(0.02)
-        if (maxincrease.lte(50)) x = x.add(maxincrease.floor())
-            else x = x.add(50)
+        x = x.add(maxincrease.min(50).floor())
         return x
     },
     names: ["Black Dwarf","Time Anomaly","Hypertiered","Melted Interactions","Intense Catalyst","Ex-Challenge","Spatial Dilation","Extreme Scaling"],
@@ -31,7 +30,6 @@ const QCs = {
             effDesc(x) { return `<b>^${format(x[0])}</b> to exponent of all-star resources.<br><b>^${format(x[1])}</b> to strength of star generators.` },
         },{
             eff(i) {
-                if(i>=35)return E(2).pow(i**5/5000)
 				if(i>=11)return E(2).pow(i**5/1000)
                 let x = E(2).pow(i**2)
                 return x
