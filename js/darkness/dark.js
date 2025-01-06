@@ -31,8 +31,8 @@ const DARK = {
 
         x.shadow = a.max(1).pow(2).pow(tmp.c16active?1:(tmp.fermions.effs[0][6]||1)).mul(hasElement(243)?elemEffect(243):1).softcap('e7000000',0.1,0)
 
-        if (a.lt(1e12) && a.gte(1)) x.passive = a.pow(0.35).div(3e3)
-        if (a.gte(1e12)) x.passive = a.div(1e12).max(1).log10().add(1).pow(2).div(1e3)
+        if (a.lt(1e12) && a.gte(1)) x.passive = a.pow(0.25).div(1e3)
+        if (a.gte(1e12)) x.passive = a.div(1e12).max(1).log10().add(1).pow(2).div(2e5)
         if (a.gte(1e22)) x.glyph = a.div(1e22).max(1).log10().add(1).root(2).sub(1).div(10).add(1).toNumber()
         if (a.gte(1e130)) x.dChal = a.div(1e130).max(1).log10().mul(20).softcap(100,0.5,0,hasBeyondRank(3,12)).mul(hasElement(21,1)?muElemEff(21):1).mul(hasElement(241)?elemEffect(241):1).floor()
         if (a.gte(1)) x.passive = x.passive.pow(a.log(10).add(1).pow(0.01).max(1))
