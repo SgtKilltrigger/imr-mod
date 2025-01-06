@@ -48,9 +48,9 @@ const FORMS = {
     massGain() {
         let x = E(1)
         x = x.add(tmp.upgs.mass[1]?tmp.upgs.mass[1].eff.eff:1)
-        x = x.mul(player.mass.gte(1) ? player.mass.log(10).plus(1) : E(1))
-        x = x.mul(player.ranks.rank.plus(1))
-        x = x.mul(player.ranks.tier.gte(1) ? player.ranks.tier.mul(player.ranks.tier).add(1) : E(1))
+        if (player.mass.gte(1)) x = x.mul(player.mass.log(10).plus(1))
+        if (player.ranks.rank.gte(1)) x = x.mul(player.ranks.rank.mul(0.333).add(1))
+        if (player.ranks.tier.gte(1)) x = x.mul(player.ranks.tier.pow(2))
         if (player.ranks.rank.gte(6)) x = x.mul(RANKS.effect.rank[6]())
         if (player.ranks.rank.gte(13)) x = x.mul(3)
         if (player.mainUpg.bh.includes(10)) x = x.mul(tmp.upgs.main?tmp.upgs.main[2][10].effect:E(1))
@@ -80,6 +80,10 @@ else x = x.pow(tmp.bosons.effect.pos_w[0])
         if (QCs.active()) x = x.pow(tmp.qu.qc_eff[4])
 
         x = x.pow(tmp.dark.shadowEff.mass)
+
+        if (hasElement(13)) x = x.pow(1.01)
+        if (player.supernova.times.gte(1)) x = x.pow(1.01)
+        if (player.qu.times.gte(1)) x = x.pow(1.02)
 
         if (CHALS.inChal(9)|| CHALS.inChal(18) || FERMIONS.onActive("12")) x = expMult(x,0.9)
         
@@ -318,11 +322,13 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
                 step = step.add(tmp.atom.particles[0].powerEffect.eff2)
                 if (player.ranks.tier.gte(4)) step = step.add(RANKS.effect.tier[4]())
                 if (player.ranks.rank.gte(40)) step = step.add(RANKS.effect.rank[40]())
+                if (hasElement(33)) step = step.mul(1.05)
             step = step.mul(tmp.bosons.effect.z_boson[0])
             step = tmp.md.bd3 ? step.pow(tmp.md.mass_eff) : step.mul(tmp.md.mass_eff)
             if (hasElement(191)) step = step.pow(elemEffect(191))
             step = step.pow(tmp.qu.chroma_eff[0])
             if (hasTree("t1")) step = step.pow(1.15)
+            
 
             let ss = E(1e50).mul(tmp.radiation.bs.eff[13])
             let p = 0.1
@@ -393,7 +399,6 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
             if (tmp.c16active || CHALS.inChal(17)|| player.mass.lt(1e15)|| CHALS.inChal(19) || CHALS.inChal(7) || CHALS.inChal(10)) return E(0)
             if (CHALS.inChal(18) && !hasOrbUpg(1)) return E(0)
             let gain = player.mass.div(1e15).root(3)
-            gain = gain.mul(player.ranks.tier.gte(3) ? player.ranks.tier.sub(2).mul(player.ranks.tier).add(1) : E(1))
             if (player.ranks.rank.gte(14)) gain = gain.mul(2)
             if (player.ranks.rank.gte(45)) gain = gain.mul(RANKS.effect.rank[45]())
             if (player.ranks.tier.gte(6)) gain = gain.mul(RANKS.effect.tier[6]())
@@ -415,6 +420,8 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
             if (hasUpgrade('rp',18)) gain = gain.pow(upgEffect(1,18))
 
             if (tmp.c16active || player.dark.run.active) gain = expMult(gain,mgEff(1))
+
+            if (hasElement(20)) gain = gain.pow(1.01)
 
             return gain.floor()
         },
@@ -438,6 +445,7 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
             if (CHALS.inChal(7) || CHALS.inChal(18)|| CHALS.inChal(19)|| CHALS.inChal(20) || CHALS.inChal(10)) gain = player.mass.div(1e180)
             if (gain.lt(1)) return E(0)
             gain = gain.root(4)
+            if (player.ranks.tetr.gte(1)) gain = gain.mul(player.ranks.tetr.add(1))
 
             if (hasTree("bh1") && !hasElement(166)) gain = gain.mul(tmp.supernova.tree_eff.bh1)
             if (!hasElement(204)) gain = gain.mul(tmp.bosons.upgs.photon[0].effect)
@@ -469,7 +477,9 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
         },
         massGain() {
             let x = tmp.bh.f
-            x = x.mul(x.log(50).add(1))
+            if (x.gte(1)) x = x.mul(x.log(50).add(1))
+            if (player.ranks.tetr.gte(2)) x = x.mul(player.ranks.tetr.pow(100))
+            if (hasElement(41)) x = x.pow(1.01)
             .mul(this.condenser.effect().eff)
             if (player.mainUpg.rp.includes(11)) x = x.mul(tmp.upgs.main?tmp.upgs.main[1][11].effect:E(1))
             if (player.mainUpg.bh.includes(14)) x = x.mul(tmp.upgs.main?tmp.upgs.main[2][14].effect:E(1))
@@ -606,6 +616,7 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
                 let t = player.bh.condenser
                 t = t.mul(tmp.radiation.bs.eff[5])
                 let pow = E(2)
+                    pow = pow.add(pow.min(1, player.bh.condenser.mul(0.003)))
                     pow = pow.add(tmp.chal.eff[6])
                     if (player.mainUpg.bh.includes(2)) pow = pow.mul(tmp.upgs.main?tmp.upgs.main[2][2].effect:E(1))
                     pow = pow.add(tmp.atom.particles[2].powerEffect.eff2)
