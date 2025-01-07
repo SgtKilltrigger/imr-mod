@@ -121,7 +121,7 @@ Supernova x 0.02 as cap bonus up to 50 (2500 Supernova)
 
 dark shadows:
 
-log(10) of Dark shadow to the power of 0.5 as Multiplier
+~~log(10) of Dark shadow to the power of 0.5 as Multiplier~~ commented out for now
 
 dark rays:
 

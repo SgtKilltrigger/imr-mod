@@ -40,7 +40,7 @@ const DARK = {
         }
         if ((x.passive ?? E(0)).gte(1)) {
             x.passive = (x.passive ?? E(0)).pow(tmp?.c16active ? 1 : (tmp?.fermions?.effs?.[0]?.[6] ?? 1));
-        }
+        } //these make the meta-quark fermion increase the passive dr gain as well, though it is too strong at the moment
         if ((x.passive ?? E(0)).lt(1)) {
             x.passive = (x.passive ?? E(0)).root(tmp?.c16active ? 1 : (tmp?.fermions?.effs?.[0]?.[6] ?? 1));
         } //these 3 "functions" check if "x.passive" or "a" is "undefined" or "null", if that is the case, it falls back to the Value "0"
@@ -114,7 +114,7 @@ const DARK = {
     shadowGain() {
         let x = E(1)
         x = x.mul(tmp.dark.rayEff.shadow)
-        if (player.dark.shadow.gte(10)) x = x.mul((player.dark.shadow.log(10).max(1).pow(0.5)).plus(1).max(1))
+        //if (player.dark.shadow.gte(10)) x = x.mul((player.dark.shadow.log(10).max(1).pow(0.5)).plus(1).max(1))
         x = x.mul(tmp.bd.upgs[11].eff||1)
         if (hasElement(119)) x = x.mul(elemEffect(119))
         if (hasElement(135)) x = x.mul(elemEffect(135))

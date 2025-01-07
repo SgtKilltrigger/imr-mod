@@ -21,6 +21,7 @@ challenge 7 completions [] now increases Quark gain
 infinity is too fast
 corruption costs will be adjusted
 end of quantum will be made harder, as to not let the player skip everything (especially later on)
+(( something to weaken or slow down the player in general ))
 
 
 
