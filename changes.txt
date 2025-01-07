@@ -129,3 +129,7 @@ Below 1e12 Dark Rays gain (Dark Rays^0.25/1e3) as passive income
 passive gain to a power of (log(100) to the power of 0.01), minumum 1
 Over 1e12 Dark Rays gain is x10
 
+glyphs:
+
+glyph upgrade no longer reduce your glyphs on upgrade (just makes it faster)
+
