@@ -10,16 +10,17 @@ element 70         c7,c8 cap +200 [] Chroma gain.pow(1.01)
 element 73         c5,c6,c8 cap +??? [] Blueprint particle gain.pow(1.01)
 neutron chal 1     c7,c8 cap +100 []    atomic power gain.pow(1.01)
 neutron chal 4b    c9 cap +100 []       radiation gain.pow(1.01)
-neutron chal 8     c9-c12 cap +200
-element 104        c9-c12 cap +200
-element 125        c9-c12 cap +???
+neutron chal 8     c9-c12 cap +200 []   ???
+element 104        c9-c12 cap +200 []   ???
+element 125        c9-c12 cap +??? []   ???
 
 challenge 7 if not !hasPrestige(2,25):
 
-
-let x = player.chal.comps[7].mul(2) 
-^^^^^^
 challenge 7 completions [] now increases Quark gain
+
+infinity is too fast
+corruption costs will be adjusted
+end of quantum will be made harder, as to not let the player skip everything (especially later on)
 
 
 
