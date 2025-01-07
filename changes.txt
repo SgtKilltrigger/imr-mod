@@ -133,3 +133,7 @@ glyphs:
 
 glyph upgrade no longer reduce your glyphs on upgrade (just makes it faster)
 
+corruption:
+
+commented out requirements, meaning you only need the corrupted shards
+*will adjust the costs later on*

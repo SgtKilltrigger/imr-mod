@@ -205,6 +205,7 @@ function buyGlyphUpgrade(i) {
         upgs[i] = upgs[i] ? upgs[i] + 1 : 1
 
         //for (let c in cost) if (tmp.dark.mg_passive[c]<=0) player.dark.run.glyphs[c] -= cost[c]
+        //makes glyph upgrades reduce your glyphs by their cost
 
         if (i==12) updateAtomTemp()
         updateDarkRunTemp()
