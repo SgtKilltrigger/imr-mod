@@ -4,7 +4,7 @@ const ATOM = {
         let x = player.bh.mass.div(player.mainUpg.br.includes(1)?1.5e156**0.5:1.5e156)
         if (x.lt(1)) return E(0)
         x = x.root(5)
-        if (player.ranks.tier.gte(10)) x = x.mul(player.ranks.tier.log(20).plus(1))
+        if (player.ranks.tier.gte(10)) x = x.mul(player.ranks.tier.log(20).plus(1).max(1))
         if (player.mainUpg.rp.includes(15)) x = x.mul(tmp.upgs.main?tmp.upgs.main[1][15].effect:E(1))
         x = hasElement(204) ? x.pow(tmp.bosons.upgs.gluon[0].effect) : x.mul(tmp.bosons.upgs.gluon[0].effect)
         if (hasElement(17)) x = x.pow(1.1)
@@ -194,7 +194,7 @@ const ATOM = {
             let p = player.atom.particles[i]
             let x = p.pow(2)
             if (x.gte(1)) x = x.add(1)
-            if (x.gte(1)) x = x.mul(x.log(8).plus(1))
+            if (x.gte(1)) x = x.mul(x.log(8).plus(1).max(1))
             if (hasElement(12)) x = p.pow(p.add(1).log10().add(1).root(4).pow(tmp.chal.eff[9]).softcap(40000,0.1,0))
             x = x.softcap('e3.8e4',0.9,2).softcap('e1.6e5',0.9,2)
             if (hasElement(61)) x = x.mul(p.add(1).root(2))

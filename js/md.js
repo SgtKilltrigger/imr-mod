@@ -16,7 +16,7 @@ const MASS_DILATION = {
     RPexpgain() {
         let x = E(2).add(tmp.md.upgs[5].eff).mul((tmp.chal && !CHALS.inChal(10)&& !CHALS.inChal(18))?tmp.chal.eff[10]:1)
         if (!player.md.active && hasTree("d1")) x = x.mul(1.25)
-        if (player.supernova.times.gte(2)) x = x.mul(player.supernova.times.log(10).add(1))
+        if (player.supernova.times.gte(2)) x = x.mul(player.supernova.times.log(10).add(1).max(1))
         if (FERMIONS.onActive("01")) x = x.div(10)
         if (QCs.active()) x = x.mul(tmp.qu.qc_eff[4])
         if (hasElement(24) && hasPrestige(0,40)) x = x.mul(tmp.elements.effect[24])
@@ -44,7 +44,7 @@ const MASS_DILATION = {
         if (CHALS.inChal(11)|| CHALS.inChal(18)) return E(0)
         let pow = E(2).add(tmp.bd.upgs[1].eff)
         let x = player.md.particles.pow(pow)
-        if (x.gte(1)) x = x.mul(x.log(10).add(1))
+        if (x.gte(1)) x = x.mul(x.log(10).add(1).max(1))
         if (player.supernova.times.gte(1)) x = x.mul(player.supernova.times.pow(10))
         
         x = x.mul(tmp.md.upgs[0].eff)
@@ -52,7 +52,7 @@ const MASS_DILATION = {
         if (hasElement(35)) x = x.mul(tmp.elements.effect[35])
         if (hasElement(40)) x = x.mul(tmp.elements.effect[40][0])
         if (hasElement(32)) x = x.pow(1.05)
-        if (player.supernova.times.gte(20)) x = x.min(x.pow((player.supernova.times.sub(19)).mul(0.01).add(1)), 2)
+        if (player.supernova.times.gte(20)) x = x.pow((player.supernova.times.sub(19)).mul(0.01).add(1).max(2))
         if (QCs.active()) x = x.pow(tmp.qu.qc_eff[4])
 
         x = x.softcap(tmp.md.massSoftcap1,0.5,0)

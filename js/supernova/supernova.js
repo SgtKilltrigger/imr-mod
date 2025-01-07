@@ -56,7 +56,7 @@ const SUPERNOVA = {
     },
     starGain() {
         let x = E(hasTree("c")?0.2:0)
-        if (player.supernova.stars.gte(1)) x = x.mul(player.supernova.stars.log(10).plus(1))
+        if (player.supernova.stars.gte(1)) x = x.mul(player.supernova.stars.log(10).plus(1).max(1))
         if (hasTree("sn1")) x = x.mul(tmp.supernova.tree_eff.sn1)
         if (hasTree("sn2")) x = x.mul(tmp.supernova.tree_eff.sn2)
         if (hasTree("sn3")) x = x.mul(tmp.supernova.tree_eff.sn3)
