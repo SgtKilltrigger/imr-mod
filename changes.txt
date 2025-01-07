@@ -113,7 +113,7 @@ entropy gain x log(10) of Enthalpy to the power of Cosmic String amount
 big rip:
 
 death shards < 750000, log(4) of death shards as multiplier
-death shard passive gain multiplier based on log(10) of death shards (starting at 750000 death shards)
+death shard passive gain is 100% of gain instead of 10%
 
 quantum challenges:
 
