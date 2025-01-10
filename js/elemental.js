@@ -188,7 +188,7 @@ const ELEMENTS = {
             cost: E(1e53),
         },
         {
-            desc: `Unlock Mass Dilation.`,
+            desc: `Unlock <span class='green'>Mass Dilation</span>.`,
             cost: E(1e56),
         },
         {
@@ -278,7 +278,7 @@ const ELEMENTS = {
             effDesc(x) { return format(x)+"x" },
         },
         {
-            desc: `Unlock Stars.`,
+            desc: `Unlock <span class='green'>Stars</span>.`,
             cost: E(1e225),
         },
         {
@@ -816,7 +816,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             cost: E("e12"),
         },{
             dark: true,
-            desc: `Unlock the 13th Challenge, Automate Big Rip upgrades.`,
+            desc: `Unlock the <span class='green'>13th Challenge</span>, Automate Big Rip upgrades.`,
             cost: E("e13"),
         },{
             desc: `Make the 3rd, 4th & 8th Challenges’ effect better.`,
@@ -875,7 +875,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             cost: E("1e27"),
         },{
             dark: true,
-            desc: `Unlock the 14th Challenge.`,
+            desc: `Unlock the <span class='green'>14th Challenge</span>.`,
             cost: E("1e32"),
         },{
             desc: `Prestige Base boosts dark rays earned.`,
@@ -964,7 +964,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             cost: E("e2.9e61"),
         },{
             dark: true,
-            desc: `Unlock Dark Run. Keep Oganesson-118 on darkness.`,
+            desc: `Unlock <span class='green'>Dark Run</span>. Keep Oganesson-118 on darkness.`,
             cost: E("1e96"),
         },{
             desc: `Collapsed star’s effect now provide an exponential boost at a reduced rate. It now applies to mass of black hole gain. But nullify Palladium-46, Cadmium-48, Thulium-69 & Osmium-76.`,
@@ -989,7 +989,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             cost: E("e1.08e72"),
         },{
             dark: true,
-            desc: `Unlock the 15th Challenge.`,
+            desc: `Unlock the <span class='green'>15th Challenge</span>.`,
             cost: E("1e106"),
         },{
             desc: `Remove two softcaps of particle powers gain.`,
@@ -1100,7 +1100,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             effDesc(x) { return "^"+format(x)+" later" },
         },{
             dark: true,
-            desc: `Unlock The Matters.`,
+            desc: `Unlock <span class='green'>The Matters</span> in the Darkness Tab.`,
             cost: E(1e250),
         },{
             br: true,
@@ -1124,7 +1124,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             effDesc(x) { return "^"+format(x) },
         },{
             dark: true,
-            desc: `Each Matter’s gain is increased by 10% for every OoM^2 of Dark Matter. Unlock more main upgrades.`,
+            desc: `Each Matter’s gain is increased by 10% for every OoM^2 of Dark Matter. Unlock more <span class='green'>main upgrades</span>.`,
             cost: E(1e303),
             effect() {
                 let x = Decimal.pow(1.1,player.bh.dm.add(1).log10().add(1).log10())
@@ -1158,7 +1158,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             desc: `Particle powers’ first effect is better.`,
             cost: E("e1.6e94"),
         },{
-            desc: `Unlock Accelerators, tickspeed now provides an exponential boost, but nullify Argon-18 and Unpentnilium-150 (except in 15th Challenge).`,
+            desc: `Unlock <span class='green'>Accelerators</span>, tickspeed now provides an exponential boost, but nullify Argon-18 and Unpentnilium-150 (except in 15th Challenge).`,
             cost: E("e8.6e95"),
         },{
             br: true,
@@ -1169,7 +1169,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             cost: E("e3.65e99"),
         },{
             br: true,
-            desc: `Unlock the fourth mass upgrade which raises Stronger.`,
+            desc: `Unlock the <span class='green'>forth mass upgrade</span> which raises Stronger.`,
             cost: E("1e4.9e98"),
         },{
             desc: `Booster boosts its effect.`,
@@ -1211,7 +1211,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             desc: `Hybridized Uran-Astatine’s second effect applies to hex scalings. It is stronger.`,
             cost: E("1e1.67e103"),
         },{
-            desc: `Unlock Beyond-Ranks.`,
+            desc: `Unlock <span class='green'>Beyond-Ranks</span>.`,
             cost: E('e2e111'),
         },{
             desc: `Muscler boosts its effect.`,
@@ -1265,7 +1265,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
             desc: `Final Star Shard's requirement is 20% cheaper.`,
             cost: E('1e1480'),
         },{
-            desc: `Unlock the 16th Challenge.`,
+            desc: `Unlock the <span class='green'>16th Challenge</span>.`,
             cost: E('e7e134'),
         },{
             desc: `[m1]’s effect is even better.`,
@@ -1520,7 +1520,7 @@ x = overflow(x.softcap('e3e15',0.85,2),'ee100',0.5)
         },
         {
             inf: true,
-            desc: `Unlock Modificators.`,
+            desc: `Unlock <span class='green'>Modificators</span> in the Infinity Tab.`,
             cost: E('1e26'),
         },
         {
@@ -1537,12 +1537,12 @@ x = overflow(x,1e180,0.1)
         },
         {
             dark: true,
-            desc: `Unlock Valor.`,
+            desc: `Unlock <span class='green'>Valor</span>.`,
             cost: E('e9600000'),
         },
         {
             inf: true,
-            desc: `Unlock Protoversal Modificator.`,
+            desc: `Unlock <span class='green'>Protoversal Modificator</span>.`,
             cost: E('2e26'),
         },
         {
@@ -1573,7 +1573,7 @@ x = overflow(x,1e180,0.1)
         },
         {
             inf: true,
-            desc: `Unlock Dalton Modificator.`,
+            desc: `Unlock <span class='green'>Dalton Modificator</span>.`,
             cost: E('1e27'),
         },
         {
@@ -1598,7 +1598,7 @@ x = overflow(x,1e180,0.1)
         },
         {
             inf: true,
-            desc: `Unlock Challenge 17.`,
+            desc: `Unlock <span class='green'>Challenge 17</span>.`,
             cost: E('7e30'),
         },
         {
@@ -1612,7 +1612,7 @@ x = overflow(x,1e180,0.1)
         },
         {
             dark: true,
-            desc: `Unlock Anti-Matters.`,
+            desc: `Unlock <span class='green'>Anti-Matters</span>.`,
             cost: E('e11500000'),
         },
         {
@@ -1645,7 +1645,7 @@ cost: E('ee1290'),
 },
 {
     inf: true,
-    desc: 'Unlock 5th dot to every Theorem.',
+    desc: `Unlock <span class='green'>5th dot</span> to every Theorem.`,
     cost: E(1e36),
 },
 {
@@ -1685,12 +1685,12 @@ if (hasElement(317)) ret = ret.mul(1.15)
             cost: E('e64500000'),
 },
 {
-            desc: `Unlock Exotic Fermions. Meta Fermions won't activate all u-quarks above them`,
+            desc: `Unlock <span class='green'>Exotic Fermions</span>. Meta Fermions won't activate all u-quarks above them`,
             cost: E('ee1812'),
 },
 {
                 inf: true,
-                desc: 'Unlock 6th dots for Theorems.',
+                desc: `Unlock <span class='green'>6th dots</span>6th dots for Theorems.`,
                 cost: E(3e40),
 },
 {
@@ -1752,7 +1752,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
         inf: true,
-        desc: 'Unlock Beyond-Prestiges.',
+        desc: `Unlock <span class='green'>Beyond-Prestiges</span>.`,
         cost: E(1e44),
 },
 {
@@ -1766,7 +1766,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
        sn: true,
-        desc: 'Unlock Galaxies and a new Supernova tree',
+        desc: `Unlock <span class='green'>Galaxies</span> and a new <span class='green'>Supernova tree</span>`,
         cost: E('1e16'),
 },
 {
@@ -1790,7 +1790,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
             dark: true,
-            desc: `Galaxy Particles gain formula is better again, and Unlock More Muonic Elements.`,
+            desc: `Galaxy Particles gain formula is better again, and Unlock More <span class='green'>Muonic Elements</span>.`,
             cost: E('e1.55e9'),
 },
 {
@@ -1905,7 +1905,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
         inf: true,
-        desc: `Unlock fifth row main upgrades per Silver Grading (max 2).`,
+        desc: `Unlock <span class='green'>fifth row main upgrades</span> per Silver Grading (max 2).`,
         effect() {
             let x = E(0)
            if (player.galaxy.grade.type[0].gte(20)) x = x.add(1)
@@ -1920,7 +1920,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
     dark: true,
-    desc: `Unlock 7th star for Theorems.`,
+    desc: `Unlock <span class='green'>7th star</span> for Theorems.`,
     cost: E('e3.5e10'),
 },
 {
@@ -1934,7 +1934,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
     inf: true,
-    desc: `Unlock Post-17th Fusion Tiers, that will muonize all of the effects per 6 Fusion Tiers (starts at 18th).`,
+    desc: `Unlock <span class='green'>Post-17th Fusion Tiers</span>, that will muonize all of the effects per 6 Fusion Tiers (starts at 18th).`,
     cost: E(1e100),
 },
 {
@@ -1954,7 +1954,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
     inf: true,
-    desc: `Unlock the chances to get last grading type.`,
+    desc: `Unlock the chances to get <span class='green'>last grading type</span>.`,
     cost: E(1e110),
 },
 {
@@ -2056,7 +2056,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
     inf: true,
-    desc: 'Unlock Eight Dot for theorems.',
+    desc: `Unlock <span class='green'>Eight Dot</span> for theorems.`,
     cost: E('1e490'),
 },
 {
