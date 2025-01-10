@@ -839,7 +839,7 @@ player.mv.firstReset == true },
                 cost: E(100),
             },
             3: {
-                desc: "[Tetr Era] Unlock Tetr.",
+                desc: "[Tetr Era] Unlock <span class='green'>Tetr</span>.",
                 cost: E(25000),
             },
             4: {

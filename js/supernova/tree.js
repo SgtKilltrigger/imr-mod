@@ -273,7 +273,7 @@ const TREE_UPGS = {
             branch: ["s3"],
             req() { return player.supernova.times.gte(6) },
             reqDesc: `6 Supernovas.`,
-            desc: `After getting all 5 star types, star unlocker will transform into star boosters.`,
+            desc: `After getting all 5 star types, star unlocker will transform into <span class='green'>star boosters</span>.`,
             cost: E(1e5),
         },
         qol1: {
@@ -368,7 +368,7 @@ const TREE_UPGS = {
         },
         chal4: {
             branch: ["chal2","chal3"],
-            desc: `Unlock the 9th Challenge.`,
+            desc: `Unlock the <span class='green'>9th Challenge</span>.`,
             cost: E(1.5e4),
         },
         chal4a: {
@@ -385,18 +385,18 @@ const TREE_UPGS = {
         },
         chal5: {
             branch: ["chal4"],
-            desc: `Unlock the 10th Challenge.`,
+            desc: `Unlock the <span class='green'>10th Challenge</span>.`,
             cost: E(1e17),
         },
         chal6: {
             unl() { return tmp.radiation.unl },
             branch: ["chal5"],
-            desc: `Unlock the 11th Challenge.`,
+            desc: `Unlock the <span class='green'>11th Challenge</span>.`,
             cost: E(1e88),
         },
         chal7: {
             branch: ["chal6"],
-            desc: `Unlock the 12th Challenge.`,
+            desc: `Unlock the <span class='green'>12th Challenge</span>.`,
             cost: E(1e200),
         },
         chal7a: {
@@ -489,7 +489,7 @@ const TREE_UPGS = {
             branch: ["fn1"],
             req() { return player.mass.div('1.5e56').gte("ee6") && player.md.active && FERMIONS.onActive("01") },
             reqDesc() { return `Reach ${formatMass(E('e1e6').mul(1.5e56))} while dilating mass in [Down]` },
-            desc: `Unlock 2 more types of U-Quark & U-Fermion.`,
+            desc: `Unlock 2 <span class='green'>more types of U-Quark & U-Fermion</span>.`,
             cost: E(1e33),
         },
         fn3: {
@@ -517,17 +517,17 @@ const TREE_UPGS = {
             branch: ["fn2"],
             req() { return player.mass.gte(uni('e4e4')) && FERMIONS.onActive("02") && CHALS.inChal(5) },
             reqDesc() { return `Reach ${formatMass(uni("e4e4"))} while in [Charm] & Challenge 5.` },
-            desc: `Unlock 2 more types of U-Quark & U-Fermion.`,
+            desc: `Unlock 2 <span class='green'>more types of U-Quark & U-Fermion</span>.`,
             cost: E(1e48),
         },
         fn7: {
             branch: ["fn6"],
-            desc: `Unlock 2 more types of U-Quark & U-Fermion.`,
+            desc: `Unlock 2 <span class='green'>more types of U-Quark & U-Fermion</span>.`,
             cost: E(1e90),
         },
         fn8: {
             branch: ["fn7"],
-            desc: `Unlock 2 final types of U-Quark & U-Fermion.`,
+            desc: `Unlock 2 <span class='green'>Final types of U-Quark & U-Fermion</span>.`,
             cost: E(1e159),
         },
         fn9: {
@@ -924,7 +924,7 @@ const TREE_UPGS = {
             unl() { return hasTree("fn6") },
             req() { return player.supernova.times.gte(44) },
             reqDesc: `44 Supernovas.`,
-            desc: `Unlock Radiation.`,
+            desc: `Unlock <span class='green'>Radiation</span>.`,
             cost: E(5e52),
         },
         unl2: {
@@ -932,7 +932,7 @@ const TREE_UPGS = {
             branch: ["qu_qol7"],
             req() { return player.qu.times.gte(20) },
             reqDesc: `Quantize 20 times.`,
-            desc: `Unlock Primordium.`,
+            desc: `Unlock <span class='green'>Primordium</span>.`,
             cost: E(50),
         },
         unl3: {
@@ -940,7 +940,7 @@ const TREE_UPGS = {
             branch: ["unl2"],
             req() { return player.qu.times.gte(200) },
             reqDesc: `Quantize 200 times.`,
-            desc: `Unlock Quantum Challenge.`,
+            desc: `Unlock <span class='green'>Quantum Challenge</span>.`,
             cost: E(1e6),
         },
         unl4: {
@@ -948,7 +948,7 @@ const TREE_UPGS = {
             branch: ["qu_qol9"],
             req() { return player.qu.qc.shard >= 66 },
             reqDesc: `66 Quantum Shards.`,
-            desc: `Unlock Big Rip.`,
+            desc: `Unlock <span class='green'>Big Rip</span>.`,
             cost: E(1e42),
         },
 
@@ -978,7 +978,7 @@ const TREE_UPGS = {
             unl: ()=>tmp.chal13comp,
 
             branch: ["fn8"],
-            desc: `Unlock 2 meta-types of U-Quark & U-Fermion.`,
+            desc: `Unlock 2 <span class='green'>meta-types of U-Quark & U-Fermion</span>.`,
             cost: E('e1.5e10'),
         },
 
@@ -1235,7 +1235,7 @@ const TREE_UPGS = {
         },
         glx5: {
             branch: ['glx2'],
-            desc: `Unlock Gradings.`,
+            desc: `Unlock <span class='green'>Gradings</span>.`,
             cost: E(100000),
         },
         glx6: {
@@ -1341,7 +1341,7 @@ const TREE_UPGS = {
         },
         glx20: {
             branch: ['glx18','glx17','glx19'],
-            desc: `Unlock more elements [ENDGAME].`,
+            desc: `Unlock <span class='green'>more Elements</span> [ENDGAME].`,
             cost: E(1e40),
         },
         glx21: {
