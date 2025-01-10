@@ -1766,7 +1766,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
        sn: true,
-        desc: 'Unlock Galaxies.',
+        desc: 'Unlock Galaxies and a new Supernova tree',
         cost: E('1e16'),
 },
 {
