@@ -137,3 +137,9 @@ corruption:
 
 commented out requirements, meaning you only need the corrupted shards
 *will adjust the costs later on*
+
+infinity:
+
+Theorem:
+
+base chance to get dots 0.1 --> 0.175
