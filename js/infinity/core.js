@@ -446,7 +446,7 @@ if (x>=1e10) return x = 1e10
     },
 }
 
-const CORE_CHANCE_MIN = 0.15   // was 0.1
+const CORE_CHANCE_MIN = 0.175   // was 0.1
 const CORE_CHANCE_BASE = 1-CORE_CHANCE_MIN
 const CORE_TYPE = Object.keys(CORE)
 
