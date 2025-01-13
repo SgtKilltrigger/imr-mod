@@ -222,12 +222,10 @@ function calcQuantum(dt) {
             if (can) QUANTUM.enter(true)
         }
 
-        if (hasUpgrade('br',8)) {
+        if (hasUpgrade('br',8) || (player.mv.points.gt(0))) {
             player.qu.points = player.qu.points.add(tmp.qu.gain.mul(inf_gs).div(10)) // passive quantum foam gain
             if (player.qu.rip.active || hasElement(147)) player.qu.rip.amt = player.qu.rip.amt.add(tmp.rip.gain.mul(inf_gs)) // passive death shard gain
         }
-
-        if (hasElement(139)) player.qu.times = player.qu.times.add(tmp.qu.gainTimes.mul(inf_gs))
     }
 
     if (player.mass.gte(mlt(7.5e6)) && !player.qu.en.unl) {  // entropy unlock

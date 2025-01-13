@@ -189,7 +189,7 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
         let nerf = player.inf.theorem.mul(5)
         if (player.inf.theorem.lt(20) && player.mass.gte(player.mass.log(10).add(1).log(10).add(1).sub(300))) {
             let exponent = Decimal.sub(100, nerf).toNumber()
-            x = x.pow(1 / exponent) // nerf to player to not make infinity too OP, though I am no math magician
+            x = x.pow(1 / exponent) // nerf to player to not make infinity too OP, though I am no math magician, too weak :(
         }
         return x
     },
