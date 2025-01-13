@@ -2,6 +2,9 @@ const GALAXY = {
     gain() {
         let x = E(0.5)
  x = x.mul(tmp.galaxy.genEff)
+ let y = player.galaxy.times.mul(0.4)
+ if (player.galaxy.times.lt(8) && player.galaxy.times.gte(1)) x = x.mul(player.galaxy.times.pow(2))
+ else if (player.galaxy.times.gte(10)) x = x.mul(player.galaxy.times.pow(y))
  if (player.galaxy.grade.type[0].gte(1)) x = x.mul(gradeEffect(0,0))
  if (hasElement(309)) x = x.mul(elemEffect(309))
  if (hasElement(314)) x = x.mul(elemEffect(314))

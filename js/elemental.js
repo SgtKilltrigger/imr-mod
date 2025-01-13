@@ -1766,7 +1766,7 @@ if (hasElement(317)) ret = ret.mul(1.15)
 },
 {
        sn: true,
-        desc: `Unlock <span class='green'>Galaxies</span> and a new <span class='green'>Supernova tree</span>`,
+        desc: `Unlock <span class='green'>Galaxies</span>`,
         cost: E('1e16'),
 },
 {

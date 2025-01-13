@@ -669,7 +669,7 @@ const TREE_UPGS = {
         qu4: {
             qf: true,
             branch: ["qu1", 'qu2', 'qu3'],
-            desc: `Remove softcaps from [sn2]'s effect.`,
+            desc: `<span class='red'>Remove</span> softcaps from [sn2]'s effect.`,
             cost: E(35),
         },
         qu5: {

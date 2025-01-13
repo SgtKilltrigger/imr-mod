@@ -77,7 +77,7 @@ x += tmp.fermions.effs[1][7]
             1: `The bonus of tickspeed, each mass upgrade now multiplies its level instead of adding..`,
             2: `Meta-Prestige Level starts ^1.025 later per Ascension.`,
             6: `Add +1.25x to Theorem's Power formula per Ascension.`,
-10: `Remove Super-Renown Scaling`,
+10: `<span class='red'>Remove</span> Super-Renown Scaling`,
 14: `Unlock Transcension`,
 30: `Element Tier 3 autobuyer now buys elements up to 314th`,
 46: `Ascensions affects Exotic-Lepton effect at reduced rate.`,

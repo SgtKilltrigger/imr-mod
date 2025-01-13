@@ -121,7 +121,7 @@ Supernova x 0.02 as cap bonus up to 50 (2500 Supernova)
 
 dark shadows:
 
-~~log(10) of Dark shadow to the power of 0.5 as Multiplier~~ commented out for now
+log(10) of Dark shadow to the power of 0.5 as Multiplier
 
 dark rays:
 
@@ -132,6 +132,7 @@ Over 1e12 Dark Rays gain is x10
 glyphs:
 
 glyph upgrade no longer reduce your glyphs on upgrade (just makes it faster)
+muonic element 7 now automatically gives all glyphs instead of just the first 3
 
 corruption:
 
@@ -140,6 +141,14 @@ commented out requirements, meaning you only need the corrupted shards
 
 infinity:
 
+most pre-infinity buffs are disabled at infinity 1, mainly the ones that use log
+
 Theorem:
 
 base chance to get dots 0.1 --> 0.175
+
+galaxy:
+
+get increased galaxy particle gain based on galaxies 
+at < 10 galaxies    (multi of galaxies**2)
+at >= 10 galaxies   (multi of galaxies**(galaxiesx0.2))

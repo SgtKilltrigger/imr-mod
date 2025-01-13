@@ -48,7 +48,7 @@ const FORMS = {
     massGain() {
         let x = E(1)
         x = x.add(tmp.upgs.mass[1]?tmp.upgs.mass[1].eff.eff:1)
-        if (player.mass.gte(1)) x = x.mul(player.mass.max(1).log(10).plus(1))
+        if (player.mass.gte(1) && player.inf.theorem.lt(1)) x = x.mul(player.mass.max(1).log(10).plus(1))
         if (player.ranks.rank.gte(1)) x = x.mul(player.ranks.rank.mul(0.333).add(1))
         if (player.ranks.tier.gte(1)) x = x.mul(player.ranks.tier.pow(2))
         if (player.ranks.rank.gte(6)) x = x.mul(RANKS.effect.rank[6]())
@@ -185,6 +185,12 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
 
         if (CHALS.inChal(13)|| CHALS.inChal(18)) x = x.max(1).log10().tetrate(1.5)
         if (hasTree('glx21')) x = x.pow(treeEff('glx21'))
+        if (player.dark.shadow.gte(1)) x = x.root(2)
+        let nerf = player.inf.theorem.mul(5)
+        if (player.inf.theorem.lt(20) && player.mass.gte(player.mass.log(10).add(1).log(10).add(1).sub(300))) {
+            let exponent = Decimal.sub(100, nerf).toNumber()
+            x = x.pow(1 / exponent) // nerf to player to not make infinity too OP, though I am no math magician
+        }
         return x
     },
     massSoftGain() {
@@ -477,7 +483,7 @@ if (hasElement(290) && !(CHALS.inChal(16)|| CHALS.inChal(17)|| CHALS.inChal(19) 
         },
         massGain() {
             let x = tmp.bh.f
-            if (x.gte(1)) x = x.mul(x.max(1).log(50).add(1))
+            if (x.gte(1) && player.inf.theorem.lt(1)) x = x.mul(x.max(1).log(50).add(1))
             if (player.ranks.tetr.gte(2)) x = x.mul(player.ranks.tetr.pow(100))
             if (hasElement(41)) x = x.pow(1.01)
             .mul(this.condenser.effect().eff)

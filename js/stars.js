@@ -2,9 +2,9 @@ const STARS = {
     unlocked() { return hasElement(36) },
     gain() {
         let x = player.stars.generators[0]
-        if (x.gte(1)) x = x.mul(x.max(1).log(50).add(1))
+        if (x.gte(1) && player.inf.theorem.lt(1)) x = x.mul(x.max(1).log(50).add(1))
         if (player.md.upgs[8].gte(1)) x = x.mul(tmp.md.upgs[8].eff)
-        if (hasElement(41) && x.gte(1)) x = x.mul(x.max(1).log(50).add(1))
+        if (hasElement(41) && x.gte(1) && player.inf.theorem.lt(1)) x = x.mul(x.max(1).log(50).add(1))
         if (player.supernova.times.gte(1)) x = x.mul(player.supernova.times)
         if (hasPrestige(1,1)) x = x.pow(2)
         if (hasElement(73)) x = x.pow(1.015)

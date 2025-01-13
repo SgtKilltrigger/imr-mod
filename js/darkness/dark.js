@@ -88,7 +88,7 @@ const DARK = {
         
         if (!hasElement(124) || (force && !hasElement(136))) {
             let qk = ["qu_qol1", "qu_qol2", "qu_qol3", "qu_qol4", "qu_qol5", "qu_qol6", "qu_qol7", "qu_qol8", "qu_qol9", "qu_qol8a", "unl1", "unl2", "unl3", "unl4",
-            "qol1", "qol2", "qol3", "qol4", "qol5", "qol6", "qol7", "qol8", "qol9", 'qu_qol10', 'qu_qol11']
+            "qol1", "qol2", "qol3", "qol4", "qol5", "qol6", "qol7", "qol8", "qol9", 'qu_qol10', 'qu_qol11', 'qu_qol12']
 
             let qk2 = []
             for (let x = 0; x < player.supernova.tree.length; x++) if (qk.includes(player.supernova.tree[x])) qk2.push(player.supernova.tree[x])
@@ -114,7 +114,7 @@ const DARK = {
     shadowGain() {
         let x = E(1)
         x = x.mul(tmp.dark.rayEff.shadow)
-        //if (player.dark.shadow.gte(10)) x = x.mul((player.dark.shadow.log(10).max(1).pow(0.5)).plus(1).max(1))
+        if (player.dark.shadow.gte(10) && player.inf.theorem.lt(1)) x = x.mul((player.dark.shadow.log(10).max(1).pow(0.5)).plus(1).max(1))
         x = x.mul(tmp.bd.upgs[11].eff||1)
         if (hasElement(119)) x = x.mul(elemEffect(119))
         if (hasElement(135)) x = x.mul(elemEffect(135))

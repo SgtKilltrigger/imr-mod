@@ -60,7 +60,7 @@ const QCs = {
             effDesc(x) { return `<b>^${format(x)}</b> to multiplier from pre-Supernova resources, except all star resources.` },
         },{
             eff(i) {
-                if(i>=11)return Math.min(1.2**(i**1.5/10),1e300)
+                if(i>=11)return 1.5**i
                 let x = 1.2**i
                 return x
             },
@@ -76,8 +76,7 @@ const QCs = {
         },{
             eff(i) {
                 if (hasElement(98) && player.qu.rip.active) i *= 0.8
-                if(i>=17)return [0.49,i**3/5000+1]
-				if(i>=11)return [0.49,i**2/1000+1]
+                if(i>=11)return [0.49,i**3/5000+1]
                 let x = [1-0.05*i,i/10+1]
                 return x
             },
