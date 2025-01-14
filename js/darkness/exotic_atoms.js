@@ -351,7 +351,7 @@ if (x==52) player.mv.orbits = player.mv.orbits.div(2).floor()
             desc: `Increase Multiverse Fragments gain/cycle based on cycle time (less cycle time = more bouns).`,
             eff() {
                 let x = E(1)
-                x = x.mul(E(10).pow(Decimal.pow(0.8,tmp.mv.cycleTime)).div(tmp.mv.cycleTime.div(25))).add(1)
+                x = x.mul(E(10).pow(Decimal.pow(0.8,tmp.mv.cycleTime.div(2/3))).div(tmp.mv.cycleTime.div(25))).add(1) //added .div(2/3)
                 return x
             },
             effDesc: x=>"x"+format(x),

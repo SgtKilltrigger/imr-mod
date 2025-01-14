@@ -241,7 +241,7 @@ if (hasElement(52,1)) x = x.add(muElemEff(52))
         return x.floor()
     },
     cycleTime() {
-        let time = E(3)
+        let time = E(2) // was E(3)
         if (tmp.inf_unl) time= time.mul(theoremEff('mv',6))
         time = time.add(tmp.mv.timeScale)
         if (CHALS.inChal(23)) time=time.mul(player.mass.add(1).log10().add(1).log10().add(1).log(2).pow(2.25))
@@ -273,7 +273,7 @@ if (hasElement(52,1)) x = x.add(muElemEff(52))
     },
     orbitNerf() {
         let x = E(1)
-     x = player.mv.orbits.sub(player.mv.upgs[1]).max(1).pow(0.3)
+     x = player.mv.orbits.sub(player.mv.upgs[1]).max(1).pow(0.25)
      return x
     },
     upgs: {
